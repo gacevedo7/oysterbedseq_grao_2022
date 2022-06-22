@@ -1,0 +1,25 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+```{r}
+library(readr)
+NEOY_2018_summary_subset <- read_csv("~/Documents/git_repos/oysterbedseq_grao_2022/data/NEOY_2018_summary_subset.csv")
+View(NEOY_2018_summary_subset)
+```
+```{r}
+##loading location data
+data <- read.csv("../data/NEOY_2018_summary_subset.csv", header=TRUE)
+
+
+### load libraries
+##tidyverse and ggplot2
+
+
+## viewing data
+##{r-view data, echo=FALSE}
+
+## plotting location by salinity
+ggplot(data, aes(x=location, y= salin)) + geom_point((aes(color=type))) + scale_color_manual(values = c("green", "purple"))
+```
