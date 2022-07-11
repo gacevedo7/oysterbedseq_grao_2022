@@ -1,0 +1,27 @@
+---
+title: "reformatting oyster data"
+author: "Gabriela R Acevedo Oquendo"
+date: '2022-06-28'
+output: html_document
+---
+
+## Loading library
+```{r}
+library("tidyr")
+library("dplyr")
+```
+
+## read data
+```{r}
+active_data <- read.csv("oip_active_data_file.csv", stringsAsFactors = TRUE)
+```
+
+## combine sample id columns
+```{r}
+long_active_data <- active_data %>%
+  pivot_longer(
+    cols = starts_with("Sample"),
+    names_to = "Sample IDs"
+  )
+```
+

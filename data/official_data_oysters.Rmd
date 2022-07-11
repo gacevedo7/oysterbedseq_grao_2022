@@ -1,0 +1,22 @@
+---
+title: "official updated data with new sample names"
+author: "Gabriela R Acevedo Oquendo"
+date: '2022-06-30'
+output: html_document
+---
+#Load libraries
+```{r}
+library("tidyr")
+library("dplyr")
+```
+
+## Read data
+```{r}
+official_data <- read.csv("updated_oip.csv", stringsAsFactors = TRUE)
+#seasons according to the northern hemisphere:
+  #spring: March 1 - May 31
+  #summer: June 1 - August 31
+  #fall: September 1 - November 30
+  #winter: December 1 - February 28/29 
+  #https://www.timeanddate.com/calendar/aboutseasons.html
+```
